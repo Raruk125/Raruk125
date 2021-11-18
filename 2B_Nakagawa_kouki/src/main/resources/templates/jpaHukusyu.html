@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div>商品一覧</div>
+	<table>
+		<tr>
+			<th>会社No</th>
+			<th>会社名</th>
+		</tr>
+		<tr th:each="comp:${comps}">
+			<td th:text="${comp.compnumber}"></td>
+			<td th:text="${comp.compname}"></td>
+		</tr>
+	</table>
+</body>
+
+</html>

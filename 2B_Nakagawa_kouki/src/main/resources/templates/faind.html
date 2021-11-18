@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div>国一覧</div>
+	<table>
+		<tr>
+			<th>国名</th>
+			<th>大陸</th>
+			<th>人口</th>
+		</tr>
+		<tr th:each="country:${countries}">
+			<td th:text="${country.name}"></td>
+			<td th:text="${country.tairiku}"></td>
+			<td th:text="${country.population}"></td>
+		</tr>
+	</table>
+	<hr>
+	
+	<h1>fromじゃなくてform</h1>
+	<form action="/country" method="POST">
+	国名：<input type ="text" name="name"><br>
+	大陸名<input type ="text" name="tairiku"><br>
+	人口<input type ="text" name="population"><br>
+	<input type="submit" value="登録">
+	</form>
+</body>
+
+</html>

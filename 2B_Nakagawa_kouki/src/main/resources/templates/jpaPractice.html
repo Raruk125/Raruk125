@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<div>商品一覧</div>
+	<table>
+		<tr>
+			<th>店番</th>
+			<th>店名</th>
+			<th>責任者名</th>
+			<th>売上ランク</th>
+		</tr>
+		<tr th:each="shop2:${shops}">
+			<td th:text="${shop.no}"></td>
+			<td th:text="${shop.name}"></td>
+			<td th:text="${shop.manager}"></td>
+			<td th:text="${shop.rank}"></td>
+		</tr>
+	</table>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<div>商品一覧</div>
+	<table>
+		<tr>
+			<th>商品番号</th>
+			<th>商品名</th>
+			<th>価格</th>
+		</tr>
+		<tr th:each="item:${items}">
+			<td th:text="${item.id}"></td>
+			<td th:text="${item.name}"></td>
+			<td th:text="${item.price}"></td>
+		</tr>
+	</table>
+	<hr>		
+	<form action="/jpa" method="POST">
+	商品番号：<input type ="text" name="id"><br>
+	商品名<input type ="text" name="name"><br>
+	価格<input type ="text" name="price"><br>
+	<input type="radio" name="ｑ2" value="登録"> 登録
+　　　<input type="radio" name="ｑ2" value="更新" > 更新
+	<p><input type="submit" value="確定"></p>
+
+	</form>
+</body>
+</html>
